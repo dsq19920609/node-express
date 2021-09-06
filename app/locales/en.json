@@ -1,0 +1,5 @@
+{
+  "success": "success",
+  "user.name.empty": "Username can not be empty",
+  "system.error": "internal server error"
+}

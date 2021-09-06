@@ -1,0 +1,39 @@
+{
+  "name": "node-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development nodemon ./app/app.js",
+    "prod": "cross-env NODE_ENV=production ./app/app.js",
+    "debug": "nodemon --inspect ./app/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dsq19920609/node-express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dsq19920609/node-express/issues"
+  },
+  "homepage": "https://github.com/dsq19920609/node-express#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.1",
+    "i18n": "^0.13.3",
+    "loadsh": "0.0.4",
+    "morgan": "^1.10.0",
+    "node-uuid": "^1.4.8"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.7.10",
+    "nodemon": "^2.0.12"
+  }
+}
