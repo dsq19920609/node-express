@@ -48,3 +48,4 @@ app.use(errorHandler());
 app.listen(PORT, () => {
   console.log(`服务端启动成功, 端口号${PORT}`);
 });
+
