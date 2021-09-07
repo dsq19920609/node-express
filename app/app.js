@@ -35,7 +35,7 @@ app.use(cookieParser());
 app.use(i18n.init);
 app.use(locale());
 
-// 统一响应格式处理 res.resultVo.success(data)
+// 统一响应格式处理 res.success()
 app.use(resultHandler({}));
 
 // 请求json格式处理

@@ -33,6 +33,10 @@ express学习笔记
 
 [awesome-express](https://github.com/wabg/awesome-express)
 
+[awesome-nodejs](https://github.com/sindresorhus/awesome-nodejs)
+
+[validator.js](https://github.com/validatorjs/validator.js)
+
 [nodemon](https://www.npmjs.com/package/nodemon)
 
 <br/>
@@ -113,9 +117,6 @@ express学习笔记
       
       地址：https://www.expressjs.com.cn/resources/middleware.html
 
-    开发中间件：
-
-    // todo
 
 5、日志
 
@@ -180,15 +181,45 @@ express学习笔记
 
       `express-validator`插件: 基于validator.js封装的express中间件
 
-      感觉不如自己校验方便呢，还是用loadsh自己写吧
+      该插件可以在router中对数据进行基本校验和业务校验
+
+      java中校验一般放在controller或者service
   
 8、用户鉴权 session和token，refresh-token
 
    基于JWT的接口权限认证
 
- 
-9、接口安全(请求签名)
+   session会话流程：
+  
+     1、用户登录时向服务器发送用户名和密码
 
+     2、服务器验证登录后，在当前对话(session)中保存相关数据，比如用户角色，登录时间，用户标识等
+
+     3、服务器返回一个session_id, 写入用户的cookie
+
+     4、用户随后的每次请求都会通过cookie将session_id传给服务器
+
+     5、服务器收到session_id,找到对象的用户信息，得知用户身份，session_id = user_info 这种key = value形式可以保存在redis中。
+
+     6、对于微服务分布式系统，session_id放在redis中共享
+
+   jwt: 
+     
+     `node-jsonwebtoken`插件
+     
+     1、服务器认证后，返回一个json对象，经过签名后返回给客户端
+
+     2、将用户信息比如用户id处理后放在响应的header中字段token中(不放在cookie是因为cookie存在跨域问题)
+
+     3、服务器接收请求后，从请求头中获取token字段，将token解析后即可得到用户信息
+
+     4、可以通过redis给token设置过期时间，过去后返回refresh-token更新token
+
+    
+
+9、接口安全(请求签名)
+  
+   对于不需要用户登录的服务端应用，为了保证API接口的安全，需要对每次的接口请求做签名处理
 
 13、swagger接口文档
 
@@ -196,9 +227,6 @@ express学习笔记
 11、数据库mysql, mongoDB
 
     事务处理
-
-    表字段下划线和驼峰转换
-
 
 
 15、数据分页查询

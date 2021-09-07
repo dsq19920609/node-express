@@ -1,11 +1,16 @@
 // service 业务处理、访问数据库、返回处理结果、记录日志等
-const i18n = require('i18n');
+
+const { User } = require('../model');
 
 // 新增用户
 exports.addUser = async (req, res, next) => {
   try {
-    // console.log(i18n.__('success'));
-    // res.status(200).json(res.resultVo.success(req.body));
+    let user = new User(req.body);
+    
+    await user.save();
+    res.success({
+      user
+    });
   } catch (error) {
     next(error);
   }

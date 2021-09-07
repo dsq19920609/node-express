@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/dsq19920609/node-express#readme",
   "dependencies": {
+    "@types/express-validator": "^3.0.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
@@ -28,7 +29,9 @@
     "express-validator": "^6.12.1",
     "i18n": "^0.13.3",
     "loadsh": "0.0.4",
+    "mongoose": "^6.0.5",
     "morgan": "^1.10.0",
+    "node-jsonwebtoken": "0.0.1",
     "node-uuid": "^1.4.8"
   },
   "devDependencies": {
